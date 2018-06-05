@@ -23,13 +23,15 @@ Copyright (C) 2016  Chris Havlin, <https://chrishavlin.wordpress.com>
 import shapefile
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 """
  IMPORT THE SHAPEFILE 
 """
-shp_file_base='StreetSegment'
-dat_dir=shp_file_base + '/'
-sf = shapefile.Reader(shp_file_base)
+shp_file_base='StreetSegmentProject'
+dat_dir='C:/Users/rc12345/Traffic Champaign/Projects/TrafficFlow/DataSegments'
+path_to_file = os.path.join(dat_dir, shp_file_base)
+sf = shapefile.Reader(path_to_file)
 
 print('number of shapes imported:',len(sf.shapes()))
 print(' ')
